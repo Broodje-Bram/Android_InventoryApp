@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">InventoryApp</string>
+
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+    <string name="action_delete_all_entries">Delete All</string>
+    <string name="editor_activity_title_new_stock">Add Stonks</string>
+    <string name="editor_activity_title_edit_stock">Edit a Stock</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="category_overview">Overview</string>
+    <string name="category_measurement">Measurement</string>
+    <string name="hint_stock_name">Name</string>
+    <string name="hint_stonk_supplier">Supplier:</string>
+    <string name="hint_stock_weight">Weight</string>
+    <string name="unit_stonk_weight">kg</string>
+    <string name="supplier_unknown">Unknown</string>
+    <string name="editor_insert_stock_successfull">stonk Saved</string>
+    <string name="editor_insert_stock_not_successfull">Error has Accured while saving Stonks</string>
+    <string name="empty_view_title_text">There is\'nt alot of stocks here</string>
+    <string name="empty_view_subtitle_text">Get started by adding Stock</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep Editing</string>
+    <string name="editor_delete_stock_successful">Stonk deleted</string>
+    <string name="editor_delete_stock_failed">Error with deleting stonk</string>
+    <string name="delete_dialog_msg">Delete stonk?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_add_image_button">Add an image</string>
+    <string name="quantity_label">Quantity:</string>
+    <string name="editor_minus_button">-</string>
+    <string name="edit_plus_button">+</string>
+    <string name="edit_initial_stock_quantity">1</string>
+    <string name="supplier_label">Supplier:</string>
+    <string name="order_label">Order:</string>
+    <string name="stock_image_view_placeholder">stonk image view placeholder</string>
+    <string name="edit_order_intent_button">Order from supplier</string>
+    <string name="edit_stonk_price_units">€</string>
+    <string name="edit_hint_stonk_price">Add Stonk Price </string>
+    <string name="price_label">Price:</string>
+    <string name="no_negative_quantity">No negative Numbers</string>
+    <string name="photo_required">Photo is Required</string>
+    <string name="stock_quantity">Stock Quantity</string>
+</resources>

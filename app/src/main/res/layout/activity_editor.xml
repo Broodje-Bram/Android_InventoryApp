@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_margin"
+    tools:context=".EditorActivity">
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_overview"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_stock_name"
+                android:hint="@string/hint_stock_name"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+
+            <!-- stonk image -->
+            <ImageView
+                android:id="@+id/edit_stock_image"
+                style="@style/IV2"
+                android:contentDescription="@string/stock_image_view_placeholder" />
+
+            <!-- add image button -->
+            <Button
+                android:id="@+id/editor_add_image_button"
+                style="@style/Button1" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- price layout -->
+    <LinearLayout
+        android:id="@+id/price_container"
+        style="@style/LLH2">
+
+        <!-- price label -->
+        <TextView style="@style/TV4" />
+
+        <!-- Input fields -->
+        <RelativeLayout style="@style/RL3">
+
+            <!-- price field -->
+            <EditText
+                android:id="@+id/edit_stonk_price"
+                style="@style/ET1"
+                android:hint="@string/edit_hint_stonk_price"
+                android:inputType="numberDecimal" />
+
+            <!-- Units for price (€) -->
+            <TextView
+                android:id="@+id/label_price_units"
+                style="@style/TV5" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- quantity layout -->
+    <LinearLayout
+        android:id="@+id/quantity_container"
+        style="@style/LLH2">
+
+        <!-- quantity label -->
+        <TextView style="@style/TV6" />
+
+        <!-- input field -->
+        <LinearLayout style="@style/LLH4">
+
+            <!-- minus button -->
+            <Button
+                android:id="@+id/minus_button"
+                style="@style/Button2"
+                android:text="@string/editor_minus_button" />
+
+            <!-- quantity field-->
+            <EditText
+                android:id="@+id/edit_stonk_quantity"
+                style="@style/ET1"
+                android:inputType="number"
+                android:text="@string/edit_initial_stock_quantity" />
+
+            <!-- plus button -->
+            <Button
+                android:id="@+id/plus_button"
+                style="@style/Button2"
+                android:text="@string/edit_plus_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Measurement category -->
+    <LinearLayout
+        android:id="@+id/container_measurement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_measurement"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_stock_weight"
+                android:hint="@string/hint_stock_weight"
+                android:inputType="number"
+                style="@style/EditorFieldStyle" />
+
+            <!-- Units for weight (kg) -->
+            <TextView
+                android:id="@+id/label_weight_units"
+                android:text="@string/unit_stonk_weight"
+                style="@style/EditorUnitsStyle"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/supplierstyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/label_supplier"
+            android:text="@string/supplier_label"
+            style="@style/EditorUnitsStyle"
+            />
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+        <!-- Breed field -->
+        <EditText
+            android:id="@+id/edit_stock_supplier"
+            android:inputType="textCapWords"
+            style="@style/EditorFieldStyle" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
