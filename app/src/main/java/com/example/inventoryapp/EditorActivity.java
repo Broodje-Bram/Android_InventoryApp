@@ -89,29 +89,14 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         mWeightEditText = (EditText) findViewById(R.id.edit_stock_weight);
         mQuantityEditText = (EditText) findViewById(R.id.edit_stonk_quantity);
         mSupplierEditText = (EditText) findViewById(R.id.edit_stock_supplier);
-        mImageView = (ImageView) findViewById(R.id.edit_stock_image);
-        Button imagineButton = (Button) findViewById(R.id.editor_add_image_button);
         Button minButton = (Button) findViewById(R.id.minus_button);
         Button plusButton = (Button) findViewById(R.id.plus_button);
-        mHasImage = false;
-        mBitmap = null;
 
-        mImageView.setOnTouchListener(mTouchListener);
         mNameEditText.setOnTouchListener(mTouchListener);
         mPriceEditText.setOnTouchListener(mTouchListener);
         mQuantityEditText.setOnTouchListener(mTouchListener);
         mWeightEditText.setOnTouchListener(mTouchListener);
         mSupplierEditText.setOnTouchListener(mTouchListener);
-
-        imagineButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent pictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (pictureIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivityForResult(pictureIntent, IMAGE_REQUEST_CODE);
-                }
-            }
-        });
 
         minButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,15 +134,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
         ContentValues values = new ContentValues();
         int weight = 0;
-
-        if (mHasImage) {
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            mBitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-            byte[] imageByte = byteArrayOutputStream.toByteArray();
-            values.put(StockEntry.COLUMN_STONK_PHOTO, imageByte);
-        } else {
-            Toast.makeText(this, getString(R.string.photo_required), Toast.LENGTH_SHORT).show();
-        }
 
         if (!TextUtils.isEmpty(weightString)) {
             weight = Integer.parseInt(weightString);
@@ -265,7 +241,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         String[] projection = {
                 StockEntry._ID,
                 StockEntry.COLUMN_STONK_NAME,
-                StockEntry.COLUMN_STONK_PHOTO,
                 StockEntry.COLUMN_STONK_PRICE,
                 StockEntry.COLUMN_STONK_QUANTITY,
                 StockEntry.COLUMN_STONK_SUPPLIER,
@@ -280,17 +255,10 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
         }
         if (cursor.moveToFirst()) {
             int nameColumnIndex = cursor.getColumnIndex(StockEntry.COLUMN_STONK_NAME);
-            int photoColumnIndex = cursor.getColumnIndex(StockEntry.COLUMN_STONK_PHOTO);
             int priceColumnIndex = cursor.getColumnIndex(StockEntry.COLUMN_STONK_PRICE);
             int quantityIndex = cursor.getColumnIndex(StockEntry.COLUMN_STONK_QUANTITY);
             int supplierColumnIndex = cursor.getColumnIndex(StockEntry.COLUMN_STONK_SUPPLIER);
             int weightColumnIndex = cursor.getColumnIndex(StockEntry.COLUMN_STONK_WEIGHT);
-
-            byte[] image = cursor.getBlob(photoColumnIndex);
-            if (image != null) {
-                mHasImage = true;
-                mBitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
-            }
 
             String name = cursor.getString(nameColumnIndex);
             String supplier = cursor.getString(supplierColumnIndex);
@@ -300,7 +268,6 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
 
             mNameEditText.setText(name);
             mSupplierEditText.setText(supplier);
-            mImageView.setImageBitmap(mBitmap);
             mPriceEditText.setText(Integer.toString(price));
             mQuantityEditText.setText(Integer.toString(quantity));
             mWeightEditText.setText(Integer.toString(weight));
@@ -367,16 +334,5 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             }
         }
         finish();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            Bundle extras = data.getExtras();
-            mBitmap = (Bitmap) extras.get("data");
-            mHasImage = true;
-            mImageView.setImageBitmap(mBitmap);
-        }
     }
 }

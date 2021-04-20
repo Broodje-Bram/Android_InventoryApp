@@ -88,17 +88,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         Log.v("CatalogActivity", rowsDeleted + " rows deleted from pet database");
     }
 
-    private byte[] convertToByte(Drawable drawable) {
-        // convert to bitmap
-        BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
-        Bitmap bitmap = bitmapDrawable.getBitmap();
-
-        // convert to byte to store
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream);
-        return byteArrayOutputStream.toByteArray();
-    }
-
     private void insertIntoDatabase(String name,
                                     String supplier,
                                     byte[] photo,
@@ -107,7 +96,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
                                     int weight) {
         ContentValues values = new ContentValues();
         values.put(StockEntry.COLUMN_STONK_NAME, name);
-        values.put(StockEntry.COLUMN_STONK_PHOTO, photo);
         values.put(StockEntry.COLUMN_STONK_SUPPLIER, supplier);
         values.put(StockEntry.COLUMN_STONK_PRICE, price);
         values.put(StockEntry.COLUMN_STONK_QUANTITY, quantity);
@@ -139,7 +127,6 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         String[] projection = {
                 StockEntry._ID,
                 StockEntry.COLUMN_STONK_NAME,
-                StockEntry.COLUMN_STONK_PHOTO,
                 StockEntry.COLUMN_STONK_PRICE,
                 StockEntry.COLUMN_STONK_SUPPLIER,
                 StockEntry.COLUMN_STONK_QUANTITY,

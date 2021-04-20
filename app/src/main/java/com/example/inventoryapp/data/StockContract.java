@@ -20,7 +20,6 @@ public final class StockContract {
 
         public final static String _ID = BaseColumns._ID;
         public final static String COLUMN_STONK_NAME = "name";
-        public final static String COLUMN_STONK_PHOTO = "photo";
         public final static String COLUMN_STONK_SUPPLIER = "supplier";
         public final static String COLUMN_STONK_QUANTITY = "quantity";
         public final static String COLUMN_STONK_WEIGHT = "weight";

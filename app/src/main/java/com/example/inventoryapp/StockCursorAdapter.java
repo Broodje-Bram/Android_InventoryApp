@@ -28,22 +28,18 @@ public class StockCursorAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         // find individual views
-        ImageView stockImage = (ImageView) view.findViewById(R.id.list_item_stock_image_view);
         TextView nameTextView = (TextView) view.findViewById(R.id.name);
-        TextView quantityTextView = (TextView) view.findViewById(R.id.quantity);
         TextView supplierTextView = (TextView) view.findViewById(R.id.supplier);
         TextView weightTextView = (TextView) view.findViewById(R.id.weight);
         TextView priceTextView = (TextView) view.findViewById(R.id.price_text_view);
 
         int nameColumnIndex = cursor.getColumnIndex(StockContract.StockEntry.COLUMN_STONK_NAME);
         int supplierColumnIndex = cursor.getColumnIndex(StockContract.StockEntry.COLUMN_STONK_SUPPLIER);
-        int photoColumnIndex = cursor.getColumnIndex(StockContract.StockEntry.COLUMN_STONK_PHOTO);
         int priceColumnIndex = cursor.getColumnIndex(StockContract.StockEntry.COLUMN_STONK_PRICE);
         int quantityColumnIndex = cursor.getColumnIndex(StockContract.StockEntry.COLUMN_STONK_QUANTITY);
         int weightColumnIndex = cursor.getColumnIndex(StockContract.StockEntry.COLUMN_STONK_WEIGHT);
 
         // Extract properties from cursor
-        byte[] stockPhoto = cursor.getBlob(photoColumnIndex);
         String stockName = cursor.getString(nameColumnIndex);
         String stockSupplier = cursor.getString(supplierColumnIndex);
         int stockPrice = cursor.getInt(priceColumnIndex);
@@ -58,7 +54,5 @@ public class StockCursorAdapter extends CursorAdapter {
         priceTextView.setText("€" + Integer.toString(stockPrice));
         weightTextView.setText( Integer.toString(stockWeight) + " kg");
         supplierTextView.setText(String.valueOf(stockSupplier));
-        Bitmap stockBitmap = BitmapFactory.decodeByteArray(stockPhoto, 0, stockPhoto.length);
-        stockImage.setImageBitmap(stockBitmap);
     }
 }

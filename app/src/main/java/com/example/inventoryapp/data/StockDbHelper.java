@@ -26,10 +26,9 @@ public class StockDbHelper extends SQLiteOpenHelper {
         String SQL_CREATE_STOCK_TABLE =  "CREATE TABLE " + StockEntry.TABLE_NAME + " ("
                 + StockEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + StockEntry.COLUMN_STONK_NAME + " TEXT NOT NULL, "
-                + StockEntry.COLUMN_STONK_PHOTO + "BLOB, "
                 + StockEntry.COLUMN_STONK_SUPPLIER + " TEXT, "
                 + StockEntry.COLUMN_STONK_QUANTITY + " INTEGER NOT NULL, "
-                + StockEntry.COLUMN_STONK_PRICE + "INTEGER NOT NULL, "
+                + StockEntry.COLUMN_STONK_PRICE + " INTEGER NOT NULL, "
                 + StockEntry.COLUMN_STONK_WEIGHT + " INTEGER NOT NULL DEFAULT 0);";
 
         // Execute the SQL statement

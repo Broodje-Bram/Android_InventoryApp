@@ -34,17 +34,6 @@
                 android:inputType="textCapWords"
                 style="@style/EditorFieldStyle" />
 
-            <!-- stonk image -->
-            <ImageView
-                android:id="@+id/edit_stock_image"
-                style="@style/IV2"
-                android:contentDescription="@string/stock_image_view_placeholder" />
-
-            <!-- add image button -->
-            <Button
-                android:id="@+id/editor_add_image_button"
-                style="@style/Button1" />
-
         </LinearLayout>
     </LinearLayout>
 
