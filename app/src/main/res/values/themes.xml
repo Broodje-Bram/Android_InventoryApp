@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.InventoryApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/darkmodelight</item>
+        <item name="colorPrimaryVariant">@color/darkmodelight</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -109,7 +109,7 @@
         <item name="android:paddingTop">@dimen/label_padding_top</item>
     </style>
 
-    <style name="TV4">
+    <style name="pricelabel">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
@@ -120,7 +120,7 @@
         <item name="android:text">@string/price_label</item>
     </style>
 
-    <style name="TV5">
+    <style name="editprice">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_alignParentRight">true</item>
@@ -130,7 +130,7 @@
         <item name="android:text">@string/edit_stonk_price_units</item>
     </style>
 
-    <style name="TV6">
+    <style name="quantitylabel">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
@@ -141,7 +141,7 @@
         <item name="android:text">@string/quantity_label</item>
     </style>
 
-    <style name="IV3">
+    <style name="emptystock">
         <item name="android:layout_height">@dimen/list_item_height</item>
         <item name="android:layout_width">@dimen/list_item_height</item>
         <item name="android:contentDescription">@string/stock_image_view_placeholder</item>
@@ -164,7 +164,7 @@
         <item name="android:background">@color/darkmode</item>
     </style>
 
-    <style name="TV10">
+    <style name="stockquantity">
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_weight">1</item>

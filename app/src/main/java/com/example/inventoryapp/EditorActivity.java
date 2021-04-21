@@ -32,21 +32,11 @@ import com.example.inventoryapp.data.StockContract.StockEntry;
 
 import java.io.ByteArrayOutputStream;
 
-
-/**
- * Allows user to create a new pet or edit an existing one.
- */
 public class EditorActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int EXISTING_STOCK_LOADER = 0;
-    private static final int IMAGE_REQUEST_CODE = 1;
 
     private Uri mCurrentStockUri;
-    private boolean mHasImage;
-    private Bitmap mBitmap;
-
-    // image view
-    private ImageView mImageView;
 
     // Edit Texts
     private EditText mNameEditText;

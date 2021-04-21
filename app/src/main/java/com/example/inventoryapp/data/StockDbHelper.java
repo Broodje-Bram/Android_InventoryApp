@@ -36,9 +36,6 @@ public class StockDbHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_STOCK_TABLE);
     }
 
-    /**
-     * This is called when the database needs to be upgraded.
-     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + StockEntry.TABLE_NAME);

@@ -22,15 +22,25 @@
             android:fontFamily="sans-serif"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@color/white"  />
+    <TextView
+            android:id="@+id/quantity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/white"
+            android:layout_marginLeft="50dp"/>
 
         <TextView
             android:id="@+id/weight"
-            style="@style/TV10"
+            style="@style/stockquantity"
+            android:layout_marginLeft="50dp"
+            android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/supplier"
-        style="@style/TV10"
+        style="@style/stockquantity"
         android:layout_marginRight="20dp"
         android:textColor="@color/white"
         android:textSize="10sp" />

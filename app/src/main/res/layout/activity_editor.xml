@@ -43,7 +43,7 @@
         style="@style/LLH2">
 
         <!-- price label -->
-        <TextView style="@style/TV4" />
+        <TextView style="@style/pricelabel" />
 
         <!-- Input fields -->
         <RelativeLayout style="@style/RL3">
@@ -58,7 +58,7 @@
             <!-- Units for price (€) -->
             <TextView
                 android:id="@+id/label_price_units"
-                style="@style/TV5" />
+                style="@style/editprice" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -68,7 +68,7 @@
         style="@style/LLH2">
 
         <!-- quantity label -->
-        <TextView style="@style/TV6" />
+        <TextView style="@style/quantitylabel" />
 
         <!-- input field -->
         <LinearLayout style="@style/LLH4">

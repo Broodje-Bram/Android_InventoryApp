@@ -27,10 +27,6 @@ import com.example.inventoryapp.data.StockContract.StockEntry;
 
 import java.io.ByteArrayOutputStream;
 
-
-/**
- * Displays list of pets that were entered and stored in the app.
- */
 public class CatalogActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private static final int STOCK_LOADER = 0;

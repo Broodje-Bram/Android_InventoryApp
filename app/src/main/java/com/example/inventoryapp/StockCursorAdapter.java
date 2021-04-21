@@ -32,6 +32,7 @@ public class StockCursorAdapter extends CursorAdapter {
         TextView supplierTextView = (TextView) view.findViewById(R.id.supplier);
         TextView weightTextView = (TextView) view.findViewById(R.id.weight);
         TextView priceTextView = (TextView) view.findViewById(R.id.price_text_view);
+        TextView quantityTextView = (TextView) view.findViewById(R.id.quantity_text_view);
 
         int nameColumnIndex = cursor.getColumnIndex(StockContract.StockEntry.COLUMN_STONK_NAME);
         int supplierColumnIndex = cursor.getColumnIndex(StockContract.StockEntry.COLUMN_STONK_SUPPLIER);
@@ -54,5 +55,6 @@ public class StockCursorAdapter extends CursorAdapter {
         priceTextView.setText("€" + Integer.toString(stockPrice));
         weightTextView.setText( Integer.toString(stockWeight) + " kg");
         supplierTextView.setText(String.valueOf(stockSupplier));
+        quantityTextView.setText(String.valueOf(stockQuantity));
     }
 }
